@@ -1,0 +1,41 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_targetReserve0",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_targetReserve1",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_currentReserve0",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_currentReserve1",
+				"type": "uint256"
+			}
+		],
+		"name": "getTradeData",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	}
+]

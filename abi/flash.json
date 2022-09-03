@@ -1,0 +1,263 @@
+[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amountOut",
+				"type": "uint256"
+			}
+		],
+		"name": "onProfit",
+		"type": "event"
+	},
+	{
+		"stateMutability": "payable",
+		"type": "receive"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "pair",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "token",
+				"type": "address"
+			}
+		],
+		"name": "_getPairBalance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "deposit",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "base_token",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "fix_token",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "factory",
+				"type": "address"
+			}
+		],
+		"name": "getExchangeByFactory",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint112",
+						"name": "reserve0",
+						"type": "uint112"
+					},
+					{
+						"internalType": "uint112",
+						"name": "reserve1",
+						"type": "uint112"
+					},
+					{
+						"internalType": "uint256",
+						"name": "d_balance",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "token0",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token1",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"internalType": "struct FlashChecker.Exchange",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "deposit",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "base_token",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "fix_token",
+				"type": "address"
+			},
+			{
+				"internalType": "address[]",
+				"name": "factories",
+				"type": "address[]"
+			}
+		],
+		"name": "getPairsByFactories",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint112",
+						"name": "reserve0",
+						"type": "uint112"
+					},
+					{
+						"internalType": "uint112",
+						"name": "reserve1",
+						"type": "uint112"
+					},
+					{
+						"internalType": "uint256",
+						"name": "d_balance",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "token0",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token1",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"internalType": "struct FlashChecker.Exchange[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "payToken",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "buyToken",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "pairIn",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "pairOut",
+				"type": "address"
+			}
+		],
+		"name": "pleaseCheck",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "amountBuy1",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountSell1",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountBuy2",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountSell2",
+				"type": "uint256"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint112",
+						"name": "reserve0",
+						"type": "uint112"
+					},
+					{
+						"internalType": "uint112",
+						"name": "reserve1",
+						"type": "uint112"
+					}
+				],
+				"internalType": "struct UniBase.Reserves",
+				"name": "RIn",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint112",
+						"name": "reserve0",
+						"type": "uint112"
+					},
+					{
+						"internalType": "uint112",
+						"name": "reserve1",
+						"type": "uint112"
+					}
+				],
+				"internalType": "struct UniBase.Reserves",
+				"name": "ROut",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

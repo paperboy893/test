@@ -1,0 +1,429 @@
+[
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "base_amount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "profit",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			}
+		],
+		"name": "LiquidityMoved",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amountOut",
+				"type": "uint256"
+			}
+		],
+		"name": "onProfit",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "pair",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "token",
+				"type": "address"
+			}
+		],
+		"name": "_getPairBalance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "factoryAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "startIndex",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "endIndex",
+				"type": "uint256"
+			}
+		],
+		"name": "batchPairInfo",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "pairAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token0Address",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token1Address",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "token0Symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "token1Symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "uint8",
+						"name": "decimal0",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "decimal1",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint112",
+						"name": "reserve0",
+						"type": "uint112"
+					},
+					{
+						"internalType": "uint112",
+						"name": "reserve1",
+						"type": "uint112"
+					}
+				],
+				"internalType": "struct ArbiLiquid.PairInfo[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "base_token",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "fix_token",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "factory",
+				"type": "address"
+			}
+		],
+		"name": "getExchangeByFactory",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "pairAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token0Address",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token1Address",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "token0Symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "token1Symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "uint8",
+						"name": "decimal0",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "decimal1",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint112",
+						"name": "reserve0",
+						"type": "uint112"
+					},
+					{
+						"internalType": "uint112",
+						"name": "reserve1",
+						"type": "uint112"
+					}
+				],
+				"internalType": "struct ArbiLiquid.PairInfo",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "factoryAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "getPairInfo",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "pairAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token0Address",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token1Address",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "token0Symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "token1Symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "uint8",
+						"name": "decimal0",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "decimal1",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint112",
+						"name": "reserve0",
+						"type": "uint112"
+					},
+					{
+						"internalType": "uint112",
+						"name": "reserve1",
+						"type": "uint112"
+					}
+				],
+				"internalType": "struct ArbiLiquid.PairInfo",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "base_token",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "fix_token",
+				"type": "address"
+			},
+			{
+				"internalType": "address[]",
+				"name": "factories",
+				"type": "address[]"
+			}
+		],
+		"name": "getPairsByFactories",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "pairAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token0Address",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token1Address",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "token0Symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "token1Symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "uint8",
+						"name": "decimal0",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "decimal1",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint112",
+						"name": "reserve0",
+						"type": "uint112"
+					},
+					{
+						"internalType": "uint112",
+						"name": "reserve1",
+						"type": "uint112"
+					}
+				],
+				"internalType": "struct ArbiLiquid.PairInfo[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address[]",
+				"name": "a_list",
+				"type": "address[]"
+			}
+		],
+		"name": "getPairsReserves",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "pairAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token0Address",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token1Address",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "token0Symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "token1Symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "uint8",
+						"name": "decimal0",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "decimal1",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint112",
+						"name": "reserve0",
+						"type": "uint112"
+					},
+					{
+						"internalType": "uint112",
+						"name": "reserve1",
+						"type": "uint112"
+					}
+				],
+				"internalType": "struct ArbiLiquid.PairInfo[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
