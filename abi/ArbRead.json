@@ -1,5 +1,75 @@
 [
 	{
+		"inputs": [
+			{
+				"internalType": "address[]",
+				"name": "_tokens",
+				"type": "address[]"
+			},
+			{
+				"internalType": "address[]",
+				"name": "_pairs",
+				"type": "address[]"
+			}
+		],
+		"name": "_flash",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "opti_paybnb",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "profit",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address[]",
+				"name": "_tokens",
+				"type": "address[]"
+			},
+			{
+				"internalType": "address[]",
+				"name": "_pairs",
+				"type": "address[]"
+			}
+		],
+		"name": "flash",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "opti_paybnb",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "profit",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "gasLeft",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "kill",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
@@ -16,6 +86,28 @@
 		],
 		"name": "onProfit",
 		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_token",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "withdrawToken",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"stateMutability": "payable",
+		"type": "receive"
 	},
 	{
 		"inputs": [
@@ -44,27 +136,39 @@
 	{
 		"inputs": [
 			{
-				"internalType": "address[]",
-				"name": "_tokens",
-				"type": "address[]"
-			},
-			{
-				"internalType": "address[]",
-				"name": "_pairs",
-				"type": "address[]"
+				"internalType": "address",
+				"name": "pair",
+				"type": "address"
 			}
 		],
-		"name": "checkThree",
+		"name": "_getReseverse",
 		"outputs": [
 			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "reserve0",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "reserve1",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "token0",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token1",
+						"type": "address"
+					}
+				],
+				"internalType": "struct ArbParks.Reserves2",
+				"name": "ret",
+				"type": "tuple"
 			}
 		],
 		"stateMutability": "view",
@@ -83,13 +187,8 @@
 				"type": "address[]"
 			}
 		],
-		"name": "checkTwo",
+		"name": "check",
 		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
 			{
 				"internalType": "uint256",
 				"name": "",
@@ -156,9 +255,5 @@
 		],
 		"stateMutability": "pure",
 		"type": "function"
-	},
-	{
-		"stateMutability": "payable",
-		"type": "receive"
 	}
 ]
